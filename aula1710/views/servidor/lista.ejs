@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Avaliação - Primeiro Trimestre</title>
+		<meta charset="UTF-8">
+		<link href="estilos.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1>Cadastro de Servidores</h1>
+		<hr>
+        <form action="pesquisarServidor" method="post">
+			<label for="nome">Nome do Servidor: </label><br>
+			<input type="text" name="nome" id="nome" size="30"><br><br>
+			
+			<input type="submit" value="Filtrar">
+		</form>
+
+        <a href="/formServidor">Novo Servidor</a>&nbsp;<a href="/">Voltar</a>
+        <br><br>
+
+ <form action="excluirAtualizarServidor" method="post">
+    <input type="submit" name="acao" value="Excluir"> &nbsp;
+    <input type="submit" name="acao" value="Atualizar"> <br><br>
+		<table border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Seleção</th>
+                <th>Número da Matrícula</th>
+                <th>Nome</th>
+                <th>Cargo</th>
+            </tr>
+            <%
+            servidores.forEach((s, index) => {
+            %>
+            <tr>
+                <td align="center"><input type="radio" name="numero_matricula" value= "<%= s.numero_matricula %>"></td>
+                <td><%= s.numero_matricula %></td>
+                <td><%= s.nome %></td>
+                <td><%= s.cargo %></td>
+            </tr>
+            <%
+            })
+            %>
+        </table>
+        </form>
+    </body>
+</html>
+

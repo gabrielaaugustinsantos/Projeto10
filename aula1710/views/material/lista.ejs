@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Avaliação - Primeiro Trimestre</title>
+		<meta charset="UTF-8">
+		<link href="estilos.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1>Cadastro de Material</h1>
+		<hr>
+		<form action="pesquisarMaterial" method="post">
+			<label for="nome">Nome do Material</label><br>
+			<input type="text" name="nome" id="nome" size="30"><br><br>
+			
+			<input type="submit" value="Filtrar">
+		</form>
+		
+		
+        <a href="/formMaterial">Novo Material</a>&nbsp;<a href="/">Voltar</a>
+        <br><br>
+
+        <form action="excluirAtualizarMaterial" method="post">
+            <input type="submit" name="acao" value="Excluir"> &nbsp;
+            <input type="submit" name="acao" value="Atualizar"> <br><br>
+            <table border="1" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>Seleção</th>
+                    <th>Id</th>
+                    <th>Nome da Material</th>
+                    <th>Descrição do Material</th>
+                    <th>Preço do Material</th>
+                    <th>Unidade do Material</th>
+                </tr>
+                <%
+                materiais.forEach((m, index) => {
+                %>
+                <tr>
+                    <td align="center"><input type="radio" name="id_material" value="<%= m.id %>"></td>
+                    <td><%= m.id %></td>
+                    <td><%= m.nome %></td>
+                    <td><%= m.descricao %></td>
+                    <td><%= m.preco_unitario %></td>
+                    <td><%= m.unidade %></td>
+                </tr>
+                <%
+                })
+                %>
+            </table>
+        </form>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Avaliação - Primeiro Trimestre</title>
+		<meta charset="UTF-8">
+		<link href="estilos.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1>Cadastro de Servidor</h1>
+		<hr>
+		<form action="/processarServidor" method="post">
+					
+            <label for="matricula">Número de Matrícula:</label><br>
+            <input type="number" name="matricula" id="matricula" size="10"><br><br>
+        
+            <label for="nome">Nome:</label><br>
+            <input type="text" name="nome" id="nome" size="30"><br><br>
+            
+            <label for="cargo">Cargo:</label><br>
+            <input type="text" name="cargo" id="cargo" size="20"><br><br>
+			
+			<input type="submit" name="salvar" value="Salvar">
+			<input type="reset" name="limpar" value="Limpar">
+		</form>
+	</body>
+</html>

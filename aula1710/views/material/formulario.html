@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Avaliação - Primeiro Trimestre</title>
+		<meta charset="UTF-8">
+		<link href="estilos.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1>Cadastro de Material</h1>
+		<hr>
+		<form action="/processarMaterial" method="post">
+					
+            <label for="nome">Nome da Material:</label><br>
+            <input type="text" name="nome" id="nome" size="30"><br><br>
+        
+            <label for="descricao">Descrição do Material:</label><br>
+            <textarea name="descricao" id="descricao" rows="5" cols="50"></textarea><br><br>
+            
+            <label for="preco">Preço do Material:</label><br>
+            <input type="number" name="preco" id="preco" size="10" step="0.1"><br><br>
+            
+            <label for="unidade">Unidade do Material:</label><br>
+            <input type="text" name="unidade" id="unidade" size="20"><br><br>
+			
+			<input type="submit" name="salvar" value="Salvar">
+			<input type="reset" name="limpar" value="Limpar">
+		</form>
+	</body>
+</html>

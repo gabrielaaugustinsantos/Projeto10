@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Avaliação - Primeiro Trimestre</title>
+		<meta charset="UTF-8">
+		<link href="estilos.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1>Solicitação de Compra</h1>
+		<hr>
+		<form action="/processarCompra" method="post">
+			
+			<label for="matricula">Servidor:</label>
+			<select name="matricula" id="matricula" required="required">
+				<option value="">-- Selecione um Servidor --</option>
+				<%
+				servidores.forEach((s, index) => {
+				%>
+				<option value="<%= s.numero_matricula %>"><%= s.nome %> - <%= s.cargo %></option>
+				<%
+				})
+				%>
+			</select><br><br>
+		
+			<label for="material2">Material:</label>
+			<select name="material" id="material2">
+				<option value="">-- Selecione um Material --</option>
+				<%
+				materiais.forEach((m, index) => {
+				%>
+				<option value="<%= m.id %>"><%= m.nome %></option>
+				<%
+				})
+				%>
+			</select><br><br>
+
+
+			<label for="quantidade">Quantidade da Compra:</label>
+			<input type="number" name="quantidade" id="quantidade" size="10"><br><br>
+
+			<fieldset>
+				<legend>Urgência da Compra:</legend>
+
+				<input type="radio" name="urgencia" id="imediata" value="Imediata">
+				<label for="imediata">Imediata</label><br>
+
+				<input type="radio" name="urgencia" id="urgente" value="Urgente">
+				<label for="urgente">Urgente</label><br>
+
+				<input type="radio" name="urgencia" id="sem-urgencia" value="Sem Urgência">
+				<label for="sem-urgencia">Sem Urgência</label><br>
+
+			</fieldset><br>
+			
+			<input type="submit" name="salvar" value="Salvar Solicitação">
+			<input type="reset" name="limpar" value="Limpar">
+		</form>
+	</body>
+</html>
